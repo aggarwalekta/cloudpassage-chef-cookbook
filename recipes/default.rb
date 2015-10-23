@@ -64,10 +64,10 @@ case node[:platform_family]
             action :run
             not_if "sudo ps x | grep cphalo | grep -v grep"
         end
-        execute "cphalo-stop" do
-            command "sudo /etc/init.d/cphalod stop"
-            only_if "sudo ps x | grep cphalo | grep -v grep"
-        end
+    #    execute "cphalo-stop" do
+    #        command "sudo /etc/init.d/cphalod stop"
+    #        only_if "sudo ps x | grep cphalo | grep -v grep"
+    #    end
     when "windows"
         p_serv_name = "CloudPassage Halo Agent"
         startup_opts_win = "/agent-key=#{node[:cloudpassage]['agent_key']} #{tag_string_win} /grid=\"#{node[:cloudpassage][:grid]}\" #{proxy_string_win}" 
@@ -79,6 +79,6 @@ case node[:platform_family]
         end
 end
 # Now we start the agent using the platform's service manager!
-service "#{p_serv_name}" do
-    action [ "enable", "start"]
-end
+#service "#{p_serv_name}" do
+#    action [ "enable", "start"]
+#end
