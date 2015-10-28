@@ -59,6 +59,12 @@ case node[:platform_family]
           action :run
         end
 
+        #need to stop so that it starts with new tag 
+        execute "cphalo-stop" do
+            command "sudo /etc/init.d/cphalod stop"
+            only_if "sudo ps x | grep cphalo | grep -v grep"
+        end
+        
         execute "cphalo-start" do
             command "sudo /etc/init.d/cphalod start"
             action :run
