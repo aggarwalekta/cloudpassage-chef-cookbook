@@ -32,7 +32,9 @@ case node[:platform_family]
     when "debian"
         apt_repository 'cloudpassage' do
             uri node[:cloudpassage][:deb_repo_url]
-            key node[:cloudpassage][:deb_key_location] 
+            key node[:cloudpassage][:deb_key_location]
+            components "main"
+            distribution "debian"
         end
     when "rhel"
         yum_repository 'cloudpassage' do
