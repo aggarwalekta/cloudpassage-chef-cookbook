@@ -1,6 +1,6 @@
 default[:cloudpassage][:agent_key] = ""
 default[:cloudpassage][:tag] = ""
-default[:cloudpassage][:deb_repo_url] = "http://packages.cloudpassage.com/debian debian main"
+default[:cloudpassage][:deb_repo_url] = "http://packages.cloudpassage.com/debian"
 default[:cloudpassage][:rpm_repo_url] = "http://packages.cloudpassage.com/redhat/$basearch"
 default[:cloudpassage][:deb_key_location] = "http://packages.cloudpassage.com/cloudpassage.packages.key"
 default[:cloudpassage][:rpm_key_location] = "http://packages.cloudpassage.com/cloudpassage.packages.key"
